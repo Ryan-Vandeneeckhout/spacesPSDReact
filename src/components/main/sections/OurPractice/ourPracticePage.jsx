@@ -1,5 +1,6 @@
 import "./ourPracticePage.scss";
 import { Button } from "../../../global/button.jsx";
+import { ImageItem } from "../../../global/imageItem";
 import { useInView } from "react-intersection-observer";
 import { Wrappers } from "../../../wrappers/wrappers.jsx";
 
@@ -8,15 +9,18 @@ export const OurPracticePage = () => {
     threshold: 0.1,
   });
 
+  const textAnimationClass = contentItemInView
+    ? "animation_none"
+    : "animation_right";
+  const imageAnimationClass = contentItemInView
+    ? "animation_none"
+    : "animation_left";
+
   return (
     <section className="our_practice_section" id="about">
       <Wrappers>
         <div className="ourPraticeContainer" ref={contentItemView}>
-          <div
-            className={`site-text-container ${
-              contentItemInView ? " animation_none" : " animation_right"
-            }`}
-          >
+          <div className={`site-text-container ${textAnimationClass}`}>
             <h2>Our Practice</h2>
             <p>
               Manifestion sprit guide quartz. Reki practinor. Lorem ipsum, dolor
@@ -36,23 +40,15 @@ export const OurPracticePage = () => {
             </p>
             <Button buttonText="Send Message" />
           </div>
-          <div
-            className={`two_image_container ${
-              contentItemInView ? " animation_none" : " animation_left"
-            }`}
-          >
-            <div className="image_container">
-              <img
-                src="./assets/images/gallery/image2.jpg"
-                alt="error not found 404"
-              />
-            </div>
-            <div className="image_container">
-              <img
-                src="./assets/images/gallery/image1.jpg"
-                alt="error not found 404"
-              />
-            </div>
+          <div className={`two_image_container ${imageAnimationClass}`}>
+            <ImageItem
+              containerImageClass="image_container"
+              imageItem="gallery/image2.jpg"
+            />
+            <ImageItem
+              containerImageClass="image_container"
+              imageItem="gallery/image1.jpg"
+            />
           </div>
         </div>
       </Wrappers>

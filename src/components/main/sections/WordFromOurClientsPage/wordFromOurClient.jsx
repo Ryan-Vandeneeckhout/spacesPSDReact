@@ -8,18 +8,18 @@ export const WordFromOurClients = () => {
     threshold: 0.1,
   });
 
+  const animationClass = contentItemInView ? "animation_none" : "animation_up";
+
   return (
     <section className="words-from-our-clients-section">
       <Wrappers>
-        <div className="client-testimonials ">
+        <div className="client-testimonials">
           <h2>Words from our clients</h2>
 
           <WordFromOurClientsParagraph />
           <div
             ref={contentItemView}
-            className={`header-image ${
-              contentItemInView ? " animation_none" : " animation_up"
-            }`}
+            className={`header-image ${animationClass}`}
           />
         </div>
       </Wrappers>

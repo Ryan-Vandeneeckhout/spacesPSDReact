@@ -1,8 +1,8 @@
 import "./spotlight.scss";
 import { SpotLightGallery } from "./spotlightgallery";
-import { Wrappers } from "../../../wrappers/wrappers";
 import { SpotLightGalleryItem } from "./spotlightGalleryItem";
 import { useInView } from "react-intersection-observer";
+import { Wrappers } from "../../../wrappers/wrappers";
 
 export const Spotlight = () => {
   const [contentItemView, contentItemInView] = useInView({
@@ -35,17 +35,16 @@ export const Spotlight = () => {
             </p>
           </div>
           <div className="gallery_container" ref={contentItemView}>
-            {SpotLightGallery.map((item) => {
+            {SpotLightGallery.map((item, index) => {
               return (
-                <>
-                  <SpotLightGalleryItem
-                    text={item.text}
-                    classes={item.class}
-                    images={item.image}
-                    animationItem={item.animation}
-                    contentItemInView={contentItemInView}
-                  />
-                </>
+                <SpotLightGalleryItem
+                  key={index}
+                  text={item.text}
+                  classes={item.class}
+                  images={item.image}
+                  animationItem={item.animation}
+                  contentItemInView={contentItemInView}
+                />
               );
             })}
           </div>

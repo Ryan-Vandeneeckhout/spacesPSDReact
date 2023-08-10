@@ -1,19 +1,19 @@
 export const SpotLightGallery = [
   {
     image: "./assets/images/gallery/image3.jpg",
-    class: "first-row-item ",
+    class: "first-row-item",
     text: "Elouise Avenue",
     animation: "animation_left",
   },
   {
     image: "./assets/images/gallery/image4.jpg",
-    class: "first-row-item ",
+    class: "first-row-item",
     text: "Grant Residence",
     animation: "animation_right",
   },
   {
     image: "./assets/images/gallery/image5.jpg",
-    class: "second-row-item ",
+    class: "second-row-item",
     text: "Basil Lab",
     animation: "animation_left",
   },

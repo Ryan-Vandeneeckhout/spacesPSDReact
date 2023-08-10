@@ -1,7 +1,7 @@
-import { NavigationButtonMap } from "./navgationButtonMap";
-import { NavButton } from "./navButton";
 import "./navigation.scss";
-import { useRef } from "react";
+import { NavButton } from "./navButton";
+import { NavigationButtonMap } from "./navgationButtonMap";
+import { useRef, useEffect } from "react";
 
 export const UpperNavigation = ({
   NavChangeStyle,
@@ -10,11 +10,11 @@ export const UpperNavigation = ({
 }) => {
   const sideMenuRef = useRef(null);
 
-  const ShowSideMenu = () => {
-    setShowSideMenu((showSideMenu) => !showSideMenu);
+  const toggleSideMenu = () => {
+    setShowSideMenu((prevShowSideMenu) => !prevShowSideMenu);
   };
 
-  window.addEventListener("resize", () => {
+  const handleResize = () => {
     const width = window.innerWidth;
 
     if (width <= 600) {
@@ -24,7 +24,12 @@ export const UpperNavigation = ({
       sideMenuRef.current.classList.add("display-none");
       setShowSideMenu(false);
     }
-  });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <nav
@@ -40,7 +45,7 @@ export const UpperNavigation = ({
           <NavButton key={index} NavText={NavText} href={href} />
         ))}
       </ul>
-      <button onClick={ShowSideMenu}>Menu</button>
+      <button onClick={toggleSideMenu}>Menu</button>
       <ul
         ref={sideMenuRef}
         className={`side-nav-menu ${
