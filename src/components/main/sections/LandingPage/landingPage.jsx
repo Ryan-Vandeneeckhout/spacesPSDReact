@@ -25,5 +25,3 @@ export const LandingPage = () => {
     </section>
   );
 };
-
-export default LandingPage;
