@@ -12,7 +12,7 @@ export const SpacesBottomAddressesPage = () => {
       <LinkComponent
         to={href}
         className="buttonAnchor"
-        smooth={locallink}
+        smooth
         aria-label={`link to ${href}`}
       >
         {links}
