@@ -1,30 +1,25 @@
-import { Wrappers } from "../../../wrappers/wrappers";
-import { SpacesBottomAddressesNavItem } from "./SpaceBottomAddressNavItemMap";
 import "./SpacesBottomAddressesPage.scss";
 import { HashLink as LocalLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
+import { SpacesBottomAddressesNavItem } from "./SpaceBottomAddressNavItemMap";
+import { Wrappers } from "../../../wrappers/wrappers";
 
 export const SpacesBottomAddressesPage = () => {
   const NavbuttonType = (links, locallink, href) => {
-    if (locallink === true) {
-      return (
-        <LocalLink
-          to={href}
-          className="buttonAnchor"
-          smooth
-          aria-label={`link to ${href}`}
-        >
-          {links}
-        </LocalLink>
-      );
-    } else {
-      return (
-        <Link aria-label={`link to ${href}`} to={href}>
-          {links}
-        </Link>
-      );
-    }
+    const LinkComponent = locallink ? LocalLink : Link;
+
+    return (
+      <LinkComponent
+        to={href}
+        className="buttonAnchor"
+        smooth={locallink}
+        aria-label={`link to ${href}`}
+      >
+        {links}
+      </LinkComponent>
+    );
   };
+
   return (
     <section className="site-bottom-section" id="contact">
       <Wrappers>
@@ -44,26 +39,18 @@ export const SpacesBottomAddressesPage = () => {
           <div className="address-physical">
             <nav className="nav-menu-table">
               {SpacesBottomAddressesNavItem.map(
-                ({ linksMap, title }, index) => {
-                  return (
-                    <ul className="ul-column" key={index}>
-                      <h3>{title}</h3>
-                      <div className="links">
-                        {linksMap.map((item, index) => {
-                          return (
-                            <li key={index}>
-                              {NavbuttonType(
-                                item.link,
-                                item.locallink,
-                                item.href
-                              )}
-                            </li>
-                          );
-                        })}
-                      </div>
-                    </ul>
-                  );
-                }
+                ({ linksMap, title }, index) => (
+                  <ul className="ul-column" key={index}>
+                    <h3>{title}</h3>
+                    <div className="links">
+                      {linksMap.map((item, index) => (
+                        <li key={index}>
+                          {NavbuttonType(item.link, item.locallink, item.href)}
+                        </li>
+                      ))}
+                    </div>
+                  </ul>
+                )
               )}
             </nav>
           </div>
