@@ -1,0 +1,75 @@
+@import "../../sass/variables.scss";
+
+.upper-nav {
+  @include FlexRowCenter;
+  background-color: #f4f3f0;
+  height: 90px;
+  justify-content: space-between;
+  padding: 0 10%;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+
+  .Logo {
+    width: 10%;
+  }
+
+  a {
+    @include ANormalize;
+    color: black;
+    font-family: "Open Sans", "Times New Roman", Times, serif;
+    font-size: 18px;
+    transition: color 0.5s;
+
+    &:hover {
+      color: goldenrod;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    border-bottom: solid black 3px;
+    border-top: solid black 3px;
+    display: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    text-transform: uppercase;
+  }
+
+  .desktop-nav-menu {
+    @include FlexRowCenter;
+    @include UlNormalize;
+    justify-content: space-between;
+    min-width: 300px;
+    width: 30%;
+  }
+  .side-nav-menu {
+    @include UlNormalize;
+    background-color: #f4f3f0;
+    height: 100vh;
+    padding: 20px;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    right: 0%;
+    top: 90px;
+    border: solid rgb(204, 204, 204) 1px;
+    border-top: none;
+
+    li {
+      padding: 20px;
+    }
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 699px) {
+  .upper-nav {
+    .desktop-nav-menu {
+      display: none;
+    }
+    button {
+      display: flex;
+    }
+  }
+}

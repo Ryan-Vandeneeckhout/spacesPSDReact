@@ -1,0 +1,111 @@
+@import "../../../../sass/variables.scss";
+
+.site-bottom-section {
+  width: 100%;
+
+  .wrapper_global {
+    padding-bottom: 0%;
+  }
+}
+.site-bottom {
+  @include FlexRow;
+  border-bottom: 1px solid #9c9b98;
+  justify-content: space-between;
+  padding-bottom: 5%;
+
+  .address-physical {
+    width: 45%;
+
+    .Logo {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .address-physical-p {
+      margin: 20px 0;
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    p {
+      margin-bottom: 20px;
+    }
+
+    .nav-menu-table {
+      @include FlexRow;
+      justify-content: flex-end;
+      width: 100%;
+    }
+  }
+
+  .ul-column {
+    @include FlexColumn;
+    @include UlNormalize;
+    margin-left: 20%;
+
+    h3 {
+      margin-bottom: 40px;
+      text-transform: capitalize;
+      letter-spacing: 0cm;
+      font-size: 22px;
+    }
+
+    li {
+      margin-bottom: 20px;
+
+      a {
+        color: black;
+      }
+    }
+  }
+}
+.Logo {
+  @include ANormalize;
+  color: black;
+  font-family: "Open Sans", "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 699px) {
+  .site-bottom {
+    @include FlexColumn;
+    border-bottom: none;
+    padding-bottom: 5%;
+
+    .address-physical {
+      width: 100%;
+      @include FlexColumn;
+
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .nav-menu-table {
+        @include FlexColumn;
+        justify-content: flex-start;
+        width: 100%;
+
+        .ul-column {
+          margin-left: 0;
+        }
+      }
+
+      .links {
+        @include FlexRow;
+        width: 100%;
+
+        li {
+            padding-right: 40px;
+        }
+      }
+    }
+
+    .address-physical:nth-child(n + 1) {
+      width: 100%;
+      border-bottom: 1px solid #9c9b98;
+    }
+  }
+}

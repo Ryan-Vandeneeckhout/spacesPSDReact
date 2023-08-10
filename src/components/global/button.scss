@@ -1,0 +1,33 @@
+@import "../../../src/sass/variables.scss";
+@import "../../../src/sass/styleGuide.scss";
+
+.pop_up_button {
+    background-color: #B18F39;
+    background-image: linear-gradient(to right, #B18F39 40%, black 60%);
+    background-position: 0%;
+    background-size: 300% 100%;
+    border: none;
+    color: white;
+    font-family: "Open Sans", 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 15px 35px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-position 0.75s;
+    margin-top: 30px;
+
+    &:hover {
+        background-position: 100%;
+        cursor: pointer;
+        will-change: transition;
+        
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 499px) {
+    .pop_up_button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,146 @@
+$fontLarge: clamp(1.125rem, 0.8007rem + 1.6216vw, 2.625rem);
+$fontMedium: clamp(2rem, 1.4595rem + 2.7027vw, 4.5rem);
+$fontSmall: clamp(0.75rem, 0.6689rem + 0.4054vw, 1.125rem);
+$fontForm: 26px;
+
+$fontHeadingType: "Open Sans", "Times New Roman", Times, serif;
+$fontBodyType: "Open Sans", "Times New Roman", Times, serif;
+
+
+.App {
+  overflow-x: hidden;
+  position: relative;
+
+}
+img {
+  @include Maxsize100;
+}
+h1 {
+  font-family: $fontHeadingType;
+  font-size: $fontLarge;
+  font-weight: 600;
+}
+h2 {
+  font-family: $fontHeadingType;
+  font-size: clamp(1.5rem, 1.3987rem + 0.5063vw, 2rem);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 30px;
+}
+h2:before {
+  border-top: 3px solid #B18F39;
+  content: '';
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 1.4em;
+  width: clamp(2.5rem, 2.2468rem + 1.2658vw, 3.75rem);
+}
+
+h3 {
+  font-family: $fontHeadingType;
+  font-size: clamp(0.75rem, 0.6994rem + 0.2532vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+}
+
+.spacesh4 {
+
+  font-family: $fontHeadingType;
+  padding: 0;
+  font-weight: 500;
+  margin: 0;
+  padding-bottom: 40px;
+  font-size:clamp(1.125rem, 0.9984rem + 0.6329vw, 1.75rem);;
+  text-transform: none;
+  line-height: 48px;
+}
+h4 {
+  font-family: $fontHeadingType;
+  font-size: 16px;
+}
+a {
+  font-family: $fontBodyType;
+}
+p {
+  font-family: $fontBodyType;
+  font-size: $fontSmall;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 0;
+}
+
+label {
+  font-family: $fontBodyType;
+  font-size: $fontSmall;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.p_bold {
+font-weight: 600;
+color: #9c9b98;
+margin: 0%;
+padding: 0;
+}
+.italicsp {
+  font-style: italic;
+  margin: 10px 0;
+}
+.boldp {
+  font-weight: 600;
+}
+.ul-normalize {
+  @include UlNormalize;
+}
+
+html {
+  --navColorBackground: #0a0a0a;
+  --devButtonColor: #0a0a0a;
+  --devButtonColorHover: #212121;
+  --sideMenucolor: #212121;
+}
+html[data-theme="violet"] {
+  --devButtonColor: rgb(60, 6, 69);
+  --navColorBackground: white;
+  --sideMenucolor: rgb(206, 162, 198);
+}
+html[data-theme="indigo"] {
+  --devButtonColor: rgb(74, 43, 122);
+  --navColorBackground: white;
+  --sideMenucolor: rgb(148, 85, 244);
+}
+html[data-theme="blue"] {
+  --devButtonColor: rgb(5, 5, 49);
+  --navColorBackground: white;
+  --sideMenucolor: #006cbe;
+}
+html[data-theme="green"] {
+  --devButtonColor: rgb(15, 39, 14);
+  --navColorBackground: white;
+  --navIconBackgroundColor: rgb(15, 39, 14);
+  --sideMenucolor: rgb(15, 39, 14);
+}
+html[data-theme="orange"] {
+  --devButtonColor: rgb(150, 63, 17);
+  --navColorBackground: white;
+  --sideMenucolor: orange;
+}
+html[data-theme="red"] {
+  --devButtonColor: rgb(110, 5, 17);
+  --navColorBackground: white;
+  --sideMenucolor: rgb(95, 8, 8);
+}
+html[data-theme="rainbow"] {
+  --devButtonColor: #360b54;
+  --navColorBackground: rgb(5, 5, 49);
+}
+
+@media screen and (min-width: 320px) and (max-width: 699px) {
+  p {
+    font-weight: 600;
+    text-align: justify;
+  }
+}

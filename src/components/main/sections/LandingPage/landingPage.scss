@@ -1,0 +1,43 @@
+@import "../../../../sass/variables.scss";
+
+.landing_section {
+  min-height: 360px;
+  padding: 0 clamp(0.625rem, -1.6535rem + 11.3924vw, 11.875rem);
+
+  .wrapper {
+    height: 100%;
+    width: 100%;
+  }
+}
+.title_container {
+  padding: 5% clamp(0rem, -4.4304rem + 22.1519vw, 21.875rem);
+  width: 100%;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.photo_container {
+  @include backgroundImageCenterCoverNORepeat;
+  background-image: url("../../../../../public/assets/images/globalImages/header.jpg");
+  min-height: clamp(10rem, 2.9114rem + 35.443vw, 45rem);
+  position: relative;
+  width: 100%;
+  outline: black solid 1px;
+  
+
+  .badgeContainer {
+    height: clamp(3.75rem, 2.9905rem + 3.7975vw, 7.5rem);
+    position: absolute;
+    right: calc(50% - clamp(1.875rem, 1.4953rem + 1.8987vw, 3.75rem));
+    bottom: calc(clamp(10rem, 2.9114rem + 35.443vw, 45rem) - clamp(1.875rem, 1.4953rem + 1.8987vw, 3.75rem));
+    width: clamp(3.75rem, 2.9905rem + 3.7975vw, 7.5rem);
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    
+  }
+}

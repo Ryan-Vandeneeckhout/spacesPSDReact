@@ -1,0 +1,54 @@
+@keyframes fadein {
+  0% { opacity:0; }
+  66% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-webkit-keyframes fadein {
+  0% { opacity:0; }
+  66% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@mixin animationDefaultLeftRightFadeIn {
+  transition: transform 600ms ease-in;
+  will-change: transform;
+  opacity: 0;
+}
+
+.animation_none {
+  transform: translatex(0px);
+  transition: transform .6s linear,-webkit-transform .6s linear;
+  will-change: transform;
+  -webkit-animation: 2.5s  fadein;
+  animation: 2.5s  fadein;
+
+}
+.animation_right {
+  @include animationDefaultLeftRightFadeIn;
+  transform: translatex(-100vw);
+}
+
+.animation_left {
+  @include animationDefaultLeftRightFadeIn;
+  transform: translatex(100vw);
+}
+
+.animation_up {
+  @include animationDefaultLeftRightFadeIn;
+  transform: translateY(25vh);
+  
+}
+
+.animation_down {
+  @include animationDefaultLeftRightFadeIn;
+  transform: translateY(-25vh);
+}
+
+.animation_outline_false {
+  outline: none;
+}
+
+.animation_outline_true {
+  outline: solid 1px rgb(204, 204, 204);
+}

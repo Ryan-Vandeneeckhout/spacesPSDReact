@@ -1,0 +1,23 @@
+@import "variables.scss";
+@import "styleGuide.scss";
+@import "./animations.scss";
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #acacac #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: auto;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #acacac;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}

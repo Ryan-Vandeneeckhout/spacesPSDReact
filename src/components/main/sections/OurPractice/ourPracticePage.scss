@@ -1,0 +1,62 @@
+@import "../../../../sass/variables.scss";
+
+.our_practice_section {
+  min-height: clamp(25rem, 18.6709rem + 31.6456vw, 56.25rem);
+
+  .ourPraticeContainer {
+    @include FlexRow;
+    justify-content: space-between;
+  }
+}
+
+.two_image_container {
+  @include FlexRow;
+  position: relative;
+  width: 60%;
+  max-height: 600px;
+  height: 600px;
+
+  .image_container {
+    position: absolute;
+    width: clamp(6.25rem, 2.1959rem + 20.2703vw, 25rem);
+    
+    img {
+      outline: black solid 1px;
+    }
+  }
+}
+.image_container:nth-child(n + 1) {
+  right: 0;
+}
+.image_container:nth-child(n + 2) {
+  left: clamp(0rem, -3.3784rem + 16.8919vw, 15.625rem);
+  top: clamp(6.25rem, 4.3513rem + 9.4937vw, 15.625rem);
+}
+@media screen and (min-width: 320px) and (max-width: 699px) {
+  .our_practice_section {
+    min-height: clamp(25rem, 18.6709rem + 31.6456vw, 56.25rem);
+
+    .ourPraticeContainer {
+      @include FlexColumn;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .two_image_container {
+    @include FlexRow;
+    height: clamp(26.5625rem, 24.3473rem + 11.0759vw, 37.5rem);
+    position: relative;
+    width: 100%;
+    margin-top: 60px;
+
+    .image_container {
+      position: absolute;
+      width: 60%;
+    }
+  }
+
+  .image_container:nth-child(n + 2) {
+    left: 0;
+  }
+}

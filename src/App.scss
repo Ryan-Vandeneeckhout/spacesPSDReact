@@ -1,0 +1,34 @@
+.App {
+  background-color: #f4f3f0;
+
+  .wrapper_global {
+    padding: clamp(1.25rem, 0.7437rem + 2.5316vw, 3.75rem) clamp(0.625rem, -1.6535rem + 11.3924vw, 11.875rem);
+    width: 100%;
+  }
+}
+
+footer {
+  padding: 1% clamp(0.625rem, -1.6535rem + 11.3924vw, 11.875rem);
+  padding-bottom: 5%;
+}
+
+.site-text-container {
+  width: clamp(18.75rem, 14.9525rem + 18.9873vw, 37.5rem);
+
+  p {
+    width: 100%;
+  }
+}
+
+.display-flex {
+  display: flex;
+}
+
+.display-none {
+  display: none;
+}
+@media screen and (min-width: 320px) and (max-width: 699px) {
+  .site-text-container {
+    width: 100%;
+  }
+}
