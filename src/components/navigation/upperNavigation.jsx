@@ -1,4 +1,5 @@
 import "./navigation.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavButton } from "./navButton";
 import { NavigationButtonMap } from "./navgationButtonMap";
 import { useRef, useEffect } from "react";
@@ -47,6 +48,11 @@ export const UpperNavigation = ({
     ? "display-flex"
     : "display-none";
 
+  const hoverOnSideMenuMobile = showSideMenu ? (
+    <FontAwesomeIcon icon="fa-times" />
+  ) : (
+    "Menu"
+  );
   return (
     <nav className={`upper-nav ${animationClassOutline}`}>
       <div className="Logo">
@@ -57,7 +63,7 @@ export const UpperNavigation = ({
           <NavButton key={index} NavText={NavText} href={href} />
         ))}
       </ul>
-      <button onClick={toggleSideMenu}>Menu</button>
+      <button onClick={toggleSideMenu}>{hoverOnSideMenuMobile}</button>
       <ul
         ref={sideMenuRef}
         className={`side-nav-menu ${animationClassDisplayFlexNone}`}

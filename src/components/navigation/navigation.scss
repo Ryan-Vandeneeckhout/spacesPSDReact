@@ -35,7 +35,14 @@
     font-weight: 400;
     letter-spacing: 1px;
     padding: 10px 0;
+    transition: background-color 0.5s;
     text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($color: #f4f3f0, $amount: 10);
+
+    }
   }
 
   .desktop-nav-menu {
@@ -60,6 +67,16 @@
 
     li {
       padding: 20px;
+
+      &:hover {
+        background-color: darken($color: #f4f3f0, $amount: 10);
+        border-radius: 15px;
+      }
+
+      a {
+        @include Maxsize100;
+        padding: 10px;
+      }
     }
   }
 }
@@ -70,6 +87,9 @@
     }
     button {
       display: flex;
+      justify-content: center;
+      min-width: 50px;
+      text-align: center;
     }
   }
 }
