@@ -1,25 +1,28 @@
 import { NavigationButtonMap } from "./navgationButtonMap";
 import { NavButton } from "./navButton";
 import "./navigation.scss";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
-export const UpperNavigation = ({ NavChangeStyle }) => {
-  const [hoverOpen, setHoverOpen] = useState(false);
+export const UpperNavigation = ({
+  NavChangeStyle,
+  showSideMenu,
+  setShowSideMenu,
+}) => {
   const sideMenuRef = useRef(null);
 
   const ShowSideMenu = () => {
-    setHoverOpen((hoverOpen) => !hoverOpen);
+    setShowSideMenu((showSideMenu) => !showSideMenu);
   };
 
   window.addEventListener("resize", () => {
     const width = window.innerWidth;
 
     if (width <= 600) {
-      setHoverOpen(false);
+      setShowSideMenu(false);
     } else if (sideMenuRef.current !== null) {
       sideMenuRef.current.classList.remove("display-flex");
       sideMenuRef.current.classList.add("display-none");
-      setHoverOpen(false);
+      setShowSideMenu(false);
     }
   });
 
@@ -41,7 +44,7 @@ export const UpperNavigation = ({ NavChangeStyle }) => {
       <ul
         ref={sideMenuRef}
         className={`side-nav-menu ${
-          hoverOpen ? " display-flex" : " display-none"
+          showSideMenu ? " display-flex" : " display-none"
         }`}
       >
         {NavigationButtonMap.map(({ NavText, href }, index) => (
