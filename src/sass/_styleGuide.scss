@@ -19,6 +19,7 @@ h1 {
   font-family: $fontHeadingType;
   font-size: $fontLarge;
   font-weight: 600;
+  margin-top: clamp(7.5rem, 9.019rem + -7.5949vw, 0rem);
 }
 h2 {
   font-family: $fontHeadingType;
