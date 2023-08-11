@@ -43,11 +43,11 @@ export const OurPracticePage = () => {
           <div className={`two_image_container ${imageAnimationClass}`}>
             <ImageItem
               containerImageClass="image_container"
-              imageItem="gallery/image2.jpg"
+              imageItem="gallery/image2.webp"
             />
             <ImageItem
               containerImageClass="image_container"
-              imageItem="gallery/image1.jpg"
+              imageItem="gallery/image1.webp"
             />
           </div>
         </div>

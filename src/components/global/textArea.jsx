@@ -14,9 +14,10 @@ export const EditorTextArea = ({
 
   return (
     <div className="textarea-message">
-      <label>{labelText}</label>
+      <label htmlFor={labelText}>{labelText}</label>
       <textarea
         ref={TextAreaInputRef}
+        aria-label={`${labelText} input`}
         onChange={handleTextareaChange}
         value={messageState}
         placeholder={TextInputValue}
