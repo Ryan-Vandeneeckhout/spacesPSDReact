@@ -40,16 +40,16 @@ export const SpacesBottomAddressesPage = () => {
             <nav className="nav-menu-table">
               {SpacesBottomAddressesNavItem.map(
                 ({ linksMap, title }, index) => (
-                  <ul className="ul-column" key={index}>
+                  <div className="ul-column" key={index}>
                     <h3>{title}</h3>
-                    <div className="links">
+                    <ul className="links">
                       {linksMap.map((item, index) => (
                         <li key={index}>
                           {NavbuttonType(item.link, item.locallink, item.href)}
                         </li>
                       ))}
-                    </div>
-                  </ul>
+                    </ul>
+                  </div>
                 )
               )}
             </nav>

@@ -43,7 +43,7 @@
 
   .ul-column {
     @include FlexColumn;
-    @include UlNormalize;
+
     margin-left: 20%;
 
     h3 {
@@ -51,6 +51,10 @@
       text-transform: capitalize;
       letter-spacing: 0cm;
       font-size: 22px;
+    }
+
+    .links {
+      @include UlNormalize;
     }
 
     li {
@@ -98,7 +102,7 @@
         width: 100%;
 
         li {
-            padding-right: 40px;
+          padding-right: 40px;
         }
       }
     }
