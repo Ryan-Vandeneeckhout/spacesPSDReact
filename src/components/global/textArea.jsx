@@ -28,7 +28,7 @@ export const EditorTextArea = ({
 };
 EditorTextArea.propTypes = {
   labelText: PropTypes.string.isRequired,
-  messageState: PropTypes.string.isRequired,
+  messageState: PropTypes.string,
   TextAreaInputRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),

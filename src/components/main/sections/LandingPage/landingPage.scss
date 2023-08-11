@@ -20,7 +20,7 @@
 
 .photo_container {
   @include backgroundImageCenterCoverNORepeat;
-  background-image: url("../../../../../public/assets/images/globalImages/header.jpg");
+  background-image: url("../../../../../public/assets/images/globalImages/header.webp");
   min-height: clamp(10rem, 2.9114rem + 35.443vw, 45rem);
   position: relative;
   width: 100%;

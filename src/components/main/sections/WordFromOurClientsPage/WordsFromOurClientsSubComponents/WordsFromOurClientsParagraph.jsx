@@ -22,7 +22,7 @@ export const WordFromOurClientsParagraph = () => {
           <div className="name-position-image">
             <ImageItem
               containerImageClass="image-circle"
-              imageItem="globalImages/image10.jpg"
+              imageItem="globalImages/image10.webp"
             />
             <div className="name-postion">
               <p className="p_bold_large">Jaime Jorge</p>

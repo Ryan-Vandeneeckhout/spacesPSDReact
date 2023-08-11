@@ -17,7 +17,7 @@ export const LandingPage = () => {
         </div>
         <div className={`photo_container ${animationClass}`}>
           <ImageItem
-            imageItem="icons/badge.png"
+            imageItem="icons/badge.webp"
             containerImageClass="badgeContainer"
           />
         </div>
